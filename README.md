@@ -1,17 +1,10 @@
-# tripu_app_dylanu_task
+# TripU App - Flutter Interview Task
 
-A new Flutter project.
+A Flutter ride-sharing application UI challenge featuring optimized and reusable architectural layers based on Figma designs.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Features Implemented
+* **Core Architecture:** Centralized `AppColors`, `AppTextStyles`, and global custom widgets (`CustomButton`, `CustomContainer`).
+* **Passenger Flow:** Responsive 4-step Bottom Sheet (Choose car, offer fare, review ride, and live bidding layout) utilizing `IndexedStack` inside `MapHomeScreen`.
+* **Driver Flow:** Multi-screen architecture (Online/Offline catalog, custom pricing options, custom keypad screen, and interactive waiting overlay).
+* **Wallet Management:** Fully responsive transaction cards aligned seamlessly with a clean history log.
+* **Navigation:** Clean state management and route configuration handled using `GoRouter`.
