@@ -23,22 +23,18 @@ class TransactionTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Row(
-        // 💡 1. توسيط كافة عناصر السطر (ال avatar والنصوص والسعر) رأسياً ليكونوا على خط واحد تماماً
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // الأيقونة الدائرية على اليسار
           CircleAvatar(
             radius: 20,
             backgroundColor: iconBgColor.withOpacity(0.1),
             child: Icon(icon, color: iconBgColor, size: 20),
           ),
           const SizedBox(width: 14),
-
-          // 💡 2. العمود المخصص للنصوص ممتد ليأخذ المساحة المتاحة ويحاذي محتواه بدقة
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min, // حبس أبعاد العمود لمنع التفاوت البصري
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -54,8 +50,6 @@ class TransactionTile extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 14),
-
-          // 💡 3. السعر مصفوف على نفس السطر في أقصى اليمين ومحاذى للمنتصف تلقائياً
           Text(
             amount,
             style: AppTextStyles.bodyMediumBold.copyWith(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tripu_app_dylanu_task/feature/passenger_screen/presentation/driver-offers_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tripu_app_dylanu_task/core/routes/app_routes.dart';
 import 'package:tripu_app_dylanu_task/feature/passenger_screen/presentation/widgets/cutom_drawar.dart';
 import 'package:tripu_app_dylanu_task/feature/passenger_screen/presentation/widgets/step_0_choose_car.dart';
 import 'package:tripu_app_dylanu_task/feature/passenger_screen/presentation/widgets/step_1_offer_fare.dart';
@@ -18,7 +19,7 @@ class MapHomeScreen extends StatefulWidget {
 class _MapHomeScreenState extends State<MapHomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   String _selectedCategory = 'Ride';
-  int _currentStep = 0; // يمثل خطوات الرحلة من 0 إلى 3 طبقاً للفيجما
+  int _currentStep = 0;
 
   String _getMapAsset() {
     return 'assets/images/Img_car1.png';
@@ -38,7 +39,7 @@ class _MapHomeScreenState extends State<MapHomeScreen> {
         backgroundColor: Colors.transparent,
         builder: (context) {
           return SizedBox(
-            height: screenHeight * 0.5, // 💡 إجبار البوتم شيت على أخذ 50% من ارتفاع الشاشة فقط
+            height: screenHeight * 0.52,
             child: CustomContainer(
               padding: const EdgeInsets.only(top: 14, left: 24, right: 24, bottom: 20),
               borderRadius: 24,
@@ -46,7 +47,7 @@ class _MapHomeScreenState extends State<MapHomeScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  // مقبض السحب العلوي الصغير
+
                   Container(
                     width: 40,
                     height: 4,
@@ -57,7 +58,7 @@ class _MapHomeScreenState extends State<MapHomeScreen> {
                   ),
                   const SizedBox(height: 15),
 
-                  // 🔀 تبديل خطوات الراكب بذكاء وأمان تام داخل الـ 50% المحكومة
+
                   Expanded(
                     child: IndexedStack(
                       index: _currentStep,
@@ -75,11 +76,7 @@ class _MapHomeScreenState extends State<MapHomeScreen> {
                         ),
                         Step3Bidding(
                           onNext: () {
-                            // 💡 التعديل المظبوط: الانتقال المباشر لشاشة عروض السائقين المستقلة [image_RrLqsD.png]
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const DriverOffersScreen()),
-                            );
+                            GoRouter.of(context).push(AppRouter.kDriverOffersScreen);
                           },
                           onCancel: () => setState(() => _currentStep = 0),
                         ),

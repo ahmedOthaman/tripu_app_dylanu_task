@@ -13,7 +13,6 @@ class Step2ReviewRide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // كروت فئات السيارات رأسية وبجوار بعضها أفقياً حسب الواجهة الأولى [image_13SiLn.png]
         Row(
           children: [
             Expanded(
@@ -36,8 +35,6 @@ class Step2ReviewRide extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-
-        // حقل عنوان الانطلاق (النقطة الزرقاء)
         Row(
           children: [
             const Icon(Icons.circle, color: AppColors.primaryBlue, size: 10),
@@ -49,21 +46,17 @@ class Step2ReviewRide extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 14),
-
-        // حقل عنوان الوصول (النقطة البنفسجية)
         Row(
           children: [
             const Icon(Icons.location_on, color: Colors.purple, size: 16),
             const SizedBox(width: 14),
             Text(
-              'Ain Shames Universty', // تعديل النص ليتطابق مع إملاء Figma بدقة
+              'Ain Shames Universty',
               style: AppTextStyles.bodyMediumBold.copyWith(fontSize: 14),
             ),
           ],
         ),
         const SizedBox(height: 14),
-
-        // عرض السعر وجانبه أيقونة الكاش/الفيزا الصغيرة [image_13SiLn.png]
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -71,7 +64,6 @@ class Step2ReviewRide extends StatelessWidget {
               'EGP 50',
               style: AppTextStyles.mainHeaderDark.copyWith(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            // أيقونة الفيزا/الكاش الرمادية الصغيرة على اليمين كما بالتصميم
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
@@ -83,8 +75,6 @@ class Step2ReviewRide extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-
-        // شريط وقت السفر ذو الخلفية الزرقاء الخفيفة على كامل العرض [image_13SiLn.png]
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
@@ -107,15 +97,14 @@ class Step2ReviewRide extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 16),
-
-        // زر التوجيه النهائي
+        const SizedBox(height: 8),
         CustomButton(
           text: 'Find a Ride',
           backgroundColor: AppColors.primaryBlue,
           textColor: Colors.white,
           onPressed: onNext,
         ),
+
       ],
     );
   }

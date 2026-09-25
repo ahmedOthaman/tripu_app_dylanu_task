@@ -25,10 +25,10 @@ class VehicleCategoryCard extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
         margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-        width: 130, // عرض ثابت ومتناسق للعرض الأفقي بجانب بعضهم
+        width: MediaQuery.of(context).size.width * 0.33,
         decoration: BoxDecoration(
           color: isSelected ? AppColors.primaryBlue.withOpacity(0.1) : Colors.white,
-          borderRadius: BorderRadius.circular(16), // البوردر ريديس المطلوب
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: isSelected ? AppColors.primaryBlue : Colors.grey.withOpacity(0.2),
             width: isSelected ? 2 : 1,
@@ -36,12 +36,12 @@ class VehicleCategoryCard extends StatelessWidget {
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center, // توسيط الصورة والنص
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               imageAsset,
-              height: 60,
-              width: 90,
+              width: MediaQuery.of(context).size.width * 0.23,
+              height: MediaQuery.of(context).size.height * 0.07,
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 8),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tripu_app_dylanu_task/feature/passenger_screen/presentation/widgets/custom_cacel_row.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_style.dart';
@@ -16,7 +17,6 @@ class DriverOffersScreen extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      // 💡 1. دمج البوتم شيت المنكمش تلقائياً هنا مباشرة داخل الملف [image_MsCadn.png]
       bottomSheet: BottomSheet(
         onClosing: () {},
         enableDrag: false,
@@ -27,9 +27,9 @@ class DriverOffersScreen extends StatelessWidget {
             borderRadius: 24,
             backgroundColor: Colors.white,
             child: Column(
-              mainAxisSize: MainAxisSize.min, // ينكمش على قد المكونات بالظبط لراحة تجربة المستخدم
+              mainAxisSize: MainAxisSize.min,
               children: [
-                // مقبض البوتم شيت الصغير
+
                 Container(
                   width: 40,
                   height: 4,
@@ -53,12 +53,11 @@ class DriverOffersScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
 
-          // قائمة كروت عروض السائقين العائمة النظيفة والمختصرة فوق الخريطة [image_MsCadn.png]
           Positioned(
             top: 100,
             left: 20,
             right: 20,
-            bottom: screenHeight * 0.28, // يضمن عدم تداخل الكروت مع البوتم شيت السفلي المدمج
+            bottom: screenHeight * 0.28,
             child: ListView(
               padding: EdgeInsets.zero,
               physics: const BouncingScrollPhysics(),
@@ -99,7 +98,7 @@ class DriverOffersScreen extends StatelessWidget {
               radius: 22,
               child: IconButton(
                 icon: const Icon(Icons.arrow_back, color: AppColors.textDark, size: 22),
-                onPressed: () => Navigator.pop(context),
+                onPressed: () => context.pop,
               ),
             ),
           ),

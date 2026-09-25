@@ -45,13 +45,14 @@ class WalletScreen extends StatelessWidget {
                   color: Colors.grey.shade400,
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
               PaymentMethodRow(icon: Icons.money, title: 'Cash', onChange: () {}),
-              const SizedBox(height: 16),
+
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
               SizedBox(
-                width: 160,
-                height: 38,
+                width: MediaQuery.of(context).size.width * 0.4,
+                height: MediaQuery.of(context).size.height * 0.045,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primaryBlue,
@@ -94,7 +95,6 @@ class WalletScreen extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   physics: const BouncingScrollPhysics(),
                   children: [
-                    // تاريخ اليوم [image_RrLqsD.png]
                     Text('Today', style: TextStyle(color: Colors.grey.shade400, fontSize: 13, fontWeight: FontWeight.w500)),
                     const SizedBox(height: 8),
                     const TransactionTile(
@@ -111,9 +111,7 @@ class WalletScreen extends StatelessWidget {
                       date: '03:00 AM',
                       amount: '+EGP 100',
                     ),
-                    const SizedBox(height: 16),
-
-                    // تاريخ يوم سابق [image_RrLqsD.png]
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     Text('Tuesday, 19 June', style: TextStyle(color: Colors.grey.shade400, fontSize: 13, fontWeight: FontWeight.w500)),
                     const SizedBox(height: 8),
                     const TransactionTile(

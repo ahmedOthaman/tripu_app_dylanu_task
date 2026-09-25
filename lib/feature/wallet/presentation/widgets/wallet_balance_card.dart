@@ -18,7 +18,7 @@ class WalletBalanceCard extends StatelessWidget {
     return CustomContainer(
       padding: const EdgeInsets.all(24),
       borderRadius: 24,
-      backgroundColor: AppColors.primaryBlue, // استدعاء اللون الأزرق الموحد من الـ Core
+      backgroundColor: AppColors.primaryBlue,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,7 +27,7 @@ class WalletBalanceCard extends StatelessWidget {
             children: [
               Text(
                 'TripU Cash',
-                style: AppTextStyles.onboardingTitle.copyWith(fontSize: 16), // استدعاء ستايل النصوص الأبيض
+                style: AppTextStyles.onboardingTitle.copyWith(fontSize: 16),
               ),
               const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16),
             ],

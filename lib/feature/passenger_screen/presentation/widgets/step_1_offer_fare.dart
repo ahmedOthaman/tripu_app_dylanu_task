@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tripu_app_dylanu_task/core/widgets/custom_bottom.dart';
+import 'package:tripu_app_dylanu_task/feature/passenger_screen/presentation/widgets/car_type.dart';
 import '../../../../core/theme/app_colors.dart';
 
 import '../../../../core/widgets/custom_container.dart';
-import 'package:flutter/material.dart';
-import 'package:tripu_app_dylanu_task/core/theme/app_colors.dart';
-
 import 'package:tripu_app_dylanu_task/core/theme/app_text_style.dart';
-import 'package:tripu_app_dylanu_task/core/widgets/custom_list_tile.dart';
 
-import 'car_type.dart';
 
 class Step1OfferFare extends StatelessWidget {
   final VoidCallback onNext;
@@ -20,6 +16,27 @@ class Step1OfferFare extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Row(
+          children: [
+            Expanded(
+              child: VehicleCategoryCard(
+                title: 'Ride',
+                imageAsset: 'assets/images/Img_car1.png',
+                isSelected: true,
+                onTap: () {},
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: VehicleCategoryCard(
+                title: 'Comfort',
+                imageAsset: 'assets/images/Img_car2.png',
+                isSelected: false,
+                onTap: () {},
+              ),
+            ),
+          ],
+        ),
         const SizedBox(height: 8),
         CustomContainer(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -76,6 +93,7 @@ class Step1OfferFare extends StatelessWidget {
           textColor: Colors.white,
           onPressed: onNext,
         ),
+
       ],
     );
   }
